@@ -14,50 +14,33 @@ import { UseQueryType } from './types/use-query.type';
 export const useQuery: UseQueryType = <T, TKeys = keyof T>() => {
   const searchParams: ReadonlyURLSearchParams = useSearchParams();
   const router: AppRouterInstance = useRouter();
-  const params: URLSearchParams = new URLSearchParams(searchParams.toString());
+  const params = new URLSearchParams(searchParams.toString());
 
-  const sort: SortType<TKeys> = (key: TKeys, value?: SortDirectionEnum) => {
-    const doesKeyExistsInSearchParams: string | null = searchParams.get(
-      String(key),
-    );
-    if (key && value && !doesKeyExistsInSearchParams) {
-      params.set(`sort[${String(key)}]`, value);
+  const updateQueryParam = (type: string, key: TKeys, value?: string): void => {
+    const paramKey = `${type}[${String(key)}]`;
+
+    if (value) {
+      params.set(paramKey, value);
     } else {
-      params.delete(`sort[${String(key)}]`, value);
+      params.delete(paramKey);
     }
+
     router.push(`?${params.toString()}`);
   };
 
-  const search: SearchType<TKeys> = (key: TKeys, value?: string) => {
-    const doesKeyExistsInSearchParams: string | null = searchParams.get(
-      String(key),
-    );
-    if (key && value && !doesKeyExistsInSearchParams) {
-      params.set(`search[${String(key)}]`, value);
-    } else {
-      params.delete(`search[${String(key)}]`, value);
-    }
-    router.push(`?${params.toString()}`);
-  };
+  const sort: SortType<TKeys> = (key, value?: SortDirectionEnum) =>
+    updateQueryParam('sort', key, value);
 
-  const filter: FilterType<TKeys> = (key: TKeys, value?: string) => {
-    const doesKeyExistsInSearchParams: string | null = searchParams.get(
-      String(key),
-    );
-    if (key && value && !doesKeyExistsInSearchParams) {
-      params.set(`filter[${String(key)}]`, value);
-    } else {
-      params.delete(`filter[${String(key)}]`, value);
-    }
-    router.push(`?${params.toString()}`);
-  };
+  const search: SearchType<TKeys> = (key, value?: string) =>
+    updateQueryParam('search', key, value);
 
-  const paginate: PaginationType = (limit: number, page?: number) => {
-    const offSet: number = ((page ?? 1) - 1) * limit;
+  const filter: FilterType<TKeys> = (key, value?: string) =>
+    updateQueryParam('filter', key, value);
 
+  const paginate: PaginationType = (limit: number, page = 1) => {
+    const offset = (page - 1) * limit;
     params.set('limit', String(limit));
-    params.set('offset', String(offSet));
-
+    params.set('offset', String(offset));
     router.push(`?${params.toString()}`);
   };
 
