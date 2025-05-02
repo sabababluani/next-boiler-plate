@@ -1,34 +1,19 @@
+import { Controller } from 'react-hook-form';
+import { InputPropsInterface } from './interfaces/input-props.interface';
 
-import React from 'react';
-import { Control, Controller } from 'react-hook-form';
-
-interface InputProps {
-  name: string;
-  control: Control<any>;
-  type?: 'text' | 'email' | 'password' | 'number';
-  label?: string;
-  placeholder?: string;
-}
-
-export const Input: React.FC<InputProps> = ({
-  name,
-  control,
-  type = 'text',
-  label,
-  placeholder,
-}) => {
+const Input = (props: InputPropsInterface) => {
   return (
     <Controller
-      name={name}
-      control={control}
+      name={props.name}
+      control={props.control}
       render={({ field, fieldState }) => (
         <div style={{ marginBottom: '1rem' }}>
-          {label && <label htmlFor={name}>{label}</label>}
+          {props.label && <label htmlFor={props.name}>{props.label}</label>}
           <input
             {...field}
-            id={name}
-            type={type}
-            placeholder={placeholder}
+            id={props.name}
+            type={props.type}
+            placeholder={props.placeholder}
             style={{
               border: fieldState.error ? '2px solid red' : '1px solid #ccc',
               padding: '8px',
@@ -46,3 +31,5 @@ export const Input: React.FC<InputProps> = ({
     />
   );
 };
+
+export default Input;

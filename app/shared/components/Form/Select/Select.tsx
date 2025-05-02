@@ -1,28 +1,17 @@
 import { Controller, Control } from 'react-hook-form';
+import { SelectPropsInterface } from './interfaces/select-props.interface';
 
-interface SelectProps {
-  name: string;
-  control: Control<any>;
-  options: { value: string; label: string }[];
-  label?: string;
-}
-
-export const Select: React.FC<SelectProps> = ({
-  name,
-  control,
-  options,
-  label,
-}) => {
+const Select = (props: SelectPropsInterface) => {
   return (
     <Controller
-      name={name}
-      control={control}
+      name={props.name}
+      control={props.control}
       render={({ field, fieldState }) => (
         <div style={{ marginBottom: '1rem' }}>
-          {label && <label htmlFor={name}>{label}</label>}
+          {props.label && <label htmlFor={props.name}>{props.label}</label>}
           <select
             {...field}
-            id={name}
+            id={props.name}
             style={{
               border: fieldState.error ? '2px solid red' : '1px solid #ccc',
               padding: '8px',
@@ -31,7 +20,7 @@ export const Select: React.FC<SelectProps> = ({
             }}
           >
             <option value="">Select...</option>
-            {options.map((opt) => (
+            {props.options.map((opt) => (
               <option key={opt.value} value={opt.value}>
                 {opt.label}
               </option>
@@ -47,3 +36,5 @@ export const Select: React.FC<SelectProps> = ({
     />
   );
 };
+
+export default Select;
