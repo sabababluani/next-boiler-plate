@@ -1,7 +1,8 @@
-import { Controller, Control } from 'react-hook-form';
+import { Controller } from 'react-hook-form';
 import { SelectPropsInterface } from './interfaces/select-props.interface';
+import { JSX } from 'react';
 
-const Select = (props: SelectPropsInterface) => {
+const Select = (props: SelectPropsInterface): JSX.Element => {
   return (
     <Controller
       name={props.name}

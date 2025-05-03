@@ -5,6 +5,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import Input from '../shared/components/Form/Input/Input';
 import Select from '../shared/components/Form/Select/Select';
+import { InputEnum } from '../shared/components/Form/Input/enums/input.enum';
 
 const schema = Yup.object({
   email: Yup.string().email('Invalid email').required('Email is required'),
@@ -20,20 +21,25 @@ const Login = () => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = (data: any) => {
+  const onSubmit = (data: unknown) => {
     console.log('Form Data:', data);
   };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <Input name="email" label="Email" control={control} type="email" />
+      <Input
+        name="email"
+        label="Email"
+        control={control}
+        type={InputEnum.EMAIL}
+      />
       <Input
         name="password"
         label="Password"
         control={control}
-        type="password"
+        type={InputEnum.PASSWORD}
       />
-      <Input name="age" label="Age" control={control} type="number" />
+      <Input name="age" label="Age" control={control} type={InputEnum.NUMBER} />
       <Select
         name="gender"
         label="Gender"
