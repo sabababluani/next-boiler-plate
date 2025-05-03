@@ -1,7 +1,8 @@
+import { JSX } from 'react';
 import { Controller } from 'react-hook-form';
 import { InputPropsInterface } from './interfaces/input-props.interface';
 
-const Input = (props: InputPropsInterface) => {
+const Input = (props: InputPropsInterface): JSX.Element => {
   return (
     <Controller
       name={props.name}
