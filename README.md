@@ -1,36 +1,113 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Next.js Boilerplate
 
-## Getting Started
+A scalable and feature-rich **Next.js boilerplate** designed for production-ready applications. It includes full developer tooling support, reusable components and hooks, and follows best practices for maintainability and performance.
 
-First, run the development server:
+---
+
+## 📦 Features
+
+- ⚙️ **Next.js** with **TypeScript**
+- 🧼 **ESLint** & **Prettier** – Code linting and formatting
+- ✅ **Husky** + **Commitlint** – Git hooks with conventional commit support
+- 🧪 **Yup** – Schema validation
+- 🧱 **Reusable Components** – Input, Select, etc.
+- ♻️ **Custom Hooks** – `useCRUD`, `useDarkMode`, `useQuery`
+- 🌐 **Base API layer** – Centralized API calls
+- 🛡️ **Middleware Support** – Easily extendable for auth, logging, etc.
+- 🐳 **Dockerfile** – Containerized app setup
+
+---
+
+## 🔧 Development Setup
+
+### 1. Install dependencies
 
 ```bash
+pnpm install
+# or
+npm install
+# or
+yarn install
+```
+
+### 2. Run development server
+
+```bash
+pnpm dev
+# or
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Format code
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm format
+# or
+npm run format
+# or
+yarn format
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4. Lint code
 
-## Learn More
+```bash
+pnpm lint
+# or
+npm run lint
+# or
+yarn lint
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🧪 Git Hooks & Linting
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Husky** runs pre-commit and pre-push checks.
+- **Commitlint** ensures commit messages follow [Conventional Commits](https://www.conventionalcommits.org/).
 
-## Deploy on Vercel
+To install hooks:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+pnpm prepare
+# or
+npm run prepare
+# or
+yarn prepare
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🐳 Docker
+
+Build and run with Docker:
+
+```bash
+docker build -t next-boiler-plate .
+docker run -p 3000:3000 next-boiler-plate
+```
+
+---
+
+## ✨ Custom Hooks & Utilities
+
+- `useCRUD`: Handles Create, Read, Update, Delete logic.
+- `useDarkMode`: Toggles dark/light theme.
+- `useQuery`: Simplified async fetching.
+- `baseAPI`: Axios-based wrapper for API calls.
+
+---
+
+## ✅ Code Quality Tools
+
+- `eslint.config.mjs`: Linting configuration
+- `.prettierrc`: Formatting rules
+- `commitlint.config.js`: Commit message rules
+- `.husky/`: Git hook scripts
+
+---
+
+## 👨‍💻 Author
+
+Crafted by sabababluani – feel free to contribute or fork the project!
