@@ -4,7 +4,7 @@ A scalable and feature-rich **Next.js boilerplate** designed for production-read
 
 ---
 
-## 📦 Features
+## Features
 
 - ⚙️ **Next.js** with **TypeScript**
 - 🧼 **ESLint** & **Prettier** – Code linting and formatting
