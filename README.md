@@ -1,4 +1,4 @@
-# 🚀 Next.js Boilerplate
+# Next.js Boilerplate
 
 A scalable and feature-rich **Next.js boilerplate** designed for production-ready applications. It includes full developer tooling support, reusable components and hooks, and follows best practices for maintainability and performance.
 
