@@ -6,19 +6,19 @@ A scalable and feature-rich **Next.js boilerplate** designed for production-read
 
 ## Features
 
-- ⚙️ **Next.js** with **TypeScript**
-- 🧼 **ESLint** & **Prettier** – Code linting and formatting
-- ✅ **Husky** + **Commitlint** – Git hooks with conventional commit support
-- 🧪 **Yup** – Schema validation
-- 🧱 **Reusable Components** – Input, Select, etc.
-- ♻️ **Custom Hooks** – `useCRUD`, `useDarkMode`, `useQuery`
-- 🌐 **Base API layer** – Centralized API calls
-- 🛡️ **Middleware Support** – Easily extendable for auth, logging, etc.
-- 🐳 **Dockerfile** – Containerized app setup
+- **Next.js** with **TypeScript**
+- **ESLint** & **Prettier** – Code linting and formatting
+- **Husky** + **Commitlint** – Git hooks with conventional commit support
+- **Yup** – Schema validation
+- **Reusable Components** – Input, Select, etc.
+- **Custom Hooks** – `useCRUD`, `useDarkMode`, `useQuery`
+- **Base API layer** – Centralized API calls
+- **Middleware Support** – Easily extendable for auth, logging, etc.
+- **Dockerfile** – Containerized app setup
 
 ---
 
-## 🔧 Development Setup
+## Development Setup
 
 ### 1. Install dependencies
 
@@ -62,7 +62,7 @@ yarn lint
 
 ---
 
-## 🧪 Git Hooks & Linting
+## Git Hooks & Linting
 
 - **Husky** runs pre-commit and pre-push checks.
 - **Commitlint** ensures commit messages follow [Conventional Commits](https://www.conventionalcommits.org/).
@@ -79,7 +79,7 @@ yarn prepare
 
 ---
 
-## 🐳 Docker
+## Docker
 
 Build and run with Docker:
 
@@ -90,7 +90,7 @@ docker run -p 3000:3000 next-boiler-plate
 
 ---
 
-## ✨ Custom Hooks & Utilities
+## Custom Hooks & Utilities
 
 - `useCRUD`: Handles Create, Read, Update, Delete logic.
 - `useDarkMode`: Toggles dark/light theme.
@@ -99,7 +99,7 @@ docker run -p 3000:3000 next-boiler-plate
 
 ---
 
-## ✅ Code Quality Tools
+## Code Quality Tools
 
 - `eslint.config.mjs`: Linting configuration
 - `.prettierrc`: Formatting rules
@@ -108,6 +108,6 @@ docker run -p 3000:3000 next-boiler-plate
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 Crafted by sabababluani – feel free to contribute or fork the project!
